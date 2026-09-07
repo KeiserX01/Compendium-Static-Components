@@ -8,8 +8,11 @@ import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-commun
  * Usa <img> con el SVG servido como asset estático de Quartz.
  * El color se aplica vía CSS filter (no se puede teñir <img> con
  * currentColor directamente).
+ *
+ * Patrón de export default factory wrap, idéntico al que usa
+ * @quartz-community/darkmode y al template oficial de plugins Quartz.
  */
-export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
+const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
   const Component: QuartzComponent = () => {
     return (
       <div
@@ -68,4 +71,6 @@ export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
   return Component
 }
 
-export default CobaltSoulLogo
+// Export default como factory wrap. Esto es lo que Quartz espera según
+// el patrón del template oficial y de @quartz-community/darkmode.
+export default (() => CobaltSoulLogo) as unknown as QuartzComponentConstructor<undefined>

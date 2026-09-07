@@ -55,7 +55,7 @@
   "quartz": {
     "name": "compendium-staticcomponents",
     "displayName": "Compendium Static Components",
-    "category": "component",
+    "category": ["component"],
     "version": "1.0.0",
     "quartzVersion": ">=5.0.0",
     "dependencies": [],

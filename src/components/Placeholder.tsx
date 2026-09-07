@@ -5,11 +5,9 @@ import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-commun
  * Placeholder
  * -----------
  * Componente invisible para reservar slots en el layout.
- *
- * Mismo patrón factory que CobaltSoulLogo: la función se llama con
- * opciones y devuelve un componente Preact.
+ * Mismo patrón factory + export default wrap que CobaltSoulLogo.
  */
-export const Placeholder: QuartzComponentConstructor<undefined> = () => {
+const Placeholder: QuartzComponentConstructor<undefined> = () => {
   const Component: QuartzComponent = () => {
     return <div class={classNames("csc-placeholder")} aria-hidden="true" />
   }
@@ -23,4 +21,4 @@ export const Placeholder: QuartzComponentConstructor<undefined> = () => {
   return Component
 }
 
-export default Placeholder
+export default (() => Placeholder) as unknown as QuartzComponentConstructor<undefined>

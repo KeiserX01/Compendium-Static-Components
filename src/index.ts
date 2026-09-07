@@ -1,7 +1,8 @@
 /**
  * Compendium-StaticComponents
- * Plugin entry point. Re-exports each component so Quartz can pick them up
- * via the `quartz.components` map in package.json.
+ * Plugin entry point. Re-exports each component as default
+ * so Quartz can pick them up via the `quartz.components` map
+ * in package.json.
  */
-export { CobaltSoulLogo } from "./components/CobaltSoulLogo"
-export { Placeholder } from "./components/Placeholder"
+export { default as CobaltSoulLogo } from "./components/CobaltSoulLogo"
+export { default as Placeholder } from "./components/Placeholder"
