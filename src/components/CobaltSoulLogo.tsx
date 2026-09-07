@@ -1,61 +1,71 @@
 import { classNames } from "@quartz-community/utils"
-import type { QuartzComponentProps } from "@quartz-community/types"
-
-import cobaltSoulSeal from "../../sc-resources/cobalt-soul-seal.svg?raw"
+import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-community/types"
 
 /**
  * CobaltSoulLogo
  * --------------
- * Renders the Cobalt Soul seal SVG inline in the sidebar, above the page title.
- * The SVG uses `fill="currentColor"` so it inherits the color set by the
- * `.csc-logo` class (controlled by `styles.scss`).
+ * Renderiza el logo del Alma de Cobalto en la sidebar.
+ * Usa <img> con el SVG servido como asset estático de Quartz.
+ * El color se aplica vía CSS filter (no se puede teñir <img> con
+ * currentColor directamente).
  */
-export const CobaltSoulLogo = (_props: QuartzComponentProps) => {
-  return (
-    <div
-      class={classNames("csc-logo", "cobalt-soul-logo")}
-      role="img"
-      aria-label="Cobalt Soul seal"
-    >
-      <div class="csc-logo__svg" dangerouslySetInnerHTML={{ __html: cobaltSoulSeal }} />
-    </div>
-  )
-}
+export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
+  const Component: QuartzComponent = () => {
+    return (
+      <div
+        class={classNames("csc-logo", "cobalt-soul-logo")}
+        role="img"
+        aria-label="Cobalt Soul seal"
+      >
+        <img
+          src="/static/cobalt-soul-seal.svg"
+          alt="Cobalt Soul seal"
+          class="csc-logo__img"
+          width="220"
+          height="220"
+          loading="eager"
+        />
+      </div>
+    )
+  }
 
-CobaltSoulLogo.css = `
-/* Estilos en styles.scss del plugin (embebido abajo para que Quartz lo cargue). */
+  Component.css = `
+/* === Cobalt Soul Logo === */
 .csc-logo {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 0.75rem 0.5rem 0.25rem;
-  color: #d4b58a; /* dorado claro, mismo en light y dark */
   pointer-events: none;
 }
 
-.csc-logo__svg {
+.csc-logo__img {
   width: 100%;
   max-width: 220px;
   height: auto;
   display: block;
-}
-
-.csc-logo__svg svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  fill: currentColor;
+  /* Teñimos el SVG negro al dorado #d4b58a.
+     El SVG se sirve con fill negro; usamos filter para recolorearlo. */
+  filter: brightness(0) saturate(100%)
+          invert(78%) sepia(28%) saturate(437%) hue-rotate(355deg)
+          brightness(95%) contrast(89%);
+  -webkit-filter: brightness(0) saturate(100%)
+          invert(78%) sepia(28%) saturate(437%) hue-rotate(355deg)
+          brightness(95%) contrast(89%);
 }
 
 @media (max-width: 800px) {
   .csc-logo {
     padding: 0.5rem 0.25rem 0.125rem;
   }
-  .csc-logo__svg {
+  .csc-logo__img {
     max-width: 140px;
   }
 }
 `
+
+  return Component
+}
 
 export default CobaltSoulLogo
