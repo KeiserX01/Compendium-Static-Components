@@ -9,10 +9,11 @@ import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-commun
  * El color se aplica vía CSS filter (no se puede teñir <img> con
  * currentColor directamente).
  *
- * Patrón de export default factory wrap, idéntico al que usa
- * @quartz-community/darkmode y al template oficial de plugins Quartz.
+ * IMPORTANTE: exportamos el factory como NAMED export, no default.
+ * El barrel (src/index.ts) lo envuelve como default para evitar
+ * la duplicación _default / _default$1 en el bundle.
  */
-const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
+export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
   const Component: QuartzComponent = () => {
     return (
       <div
@@ -48,8 +49,7 @@ const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
   max-width: 220px;
   height: auto;
   display: block;
-  /* Teñimos el SVG negro al dorado #d4b58a.
-     El SVG se sirve con fill negro; usamos filter para recolorearlo. */
+  /* Teñimos el SVG negro al dorado #d4b58a. */
   filter: brightness(0) saturate(100%)
           invert(78%) sepia(28%) saturate(437%) hue-rotate(355deg)
           brightness(95%) contrast(89%);
@@ -70,7 +70,3 @@ const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
 
   return Component
 }
-
-// Export default como factory wrap. Esto es lo que Quartz espera según
-// el patrón del template oficial y de @quartz-community/darkmode.
-export default (() => CobaltSoulLogo) as unknown as QuartzComponentConstructor<undefined>

@@ -39,8 +39,7 @@ var CobaltSoulLogo = () => {
   max-width: 220px;
   height: auto;
   display: block;
-  /* Te\xF1imos el SVG negro al dorado #d4b58a.
-     El SVG se sirve con fill negro; usamos filter para recolorearlo. */
+  /* Te\xF1imos el SVG negro al dorado #d4b58a. */
   filter: brightness(0) saturate(100%)
           invert(78%) sepia(28%) saturate(437%) hue-rotate(355deg)
           brightness(95%) contrast(89%);
@@ -60,25 +59,12 @@ var CobaltSoulLogo = () => {
 `;
   return Component;
 };
-var CobaltSoulLogo_default = (() => CobaltSoulLogo);
 
-// src/components/Placeholder.tsx
-import { classNames as classNames2 } from "@quartz-community/utils";
-import { jsx as jsx2 } from "preact/jsx-runtime";
-var Placeholder = () => {
-  const Component = () => {
-    return /* @__PURE__ */ jsx2("div", { class: classNames2("csc-placeholder"), "aria-hidden": "true" });
-  };
-  Component.css = `
-.csc-placeholder {
-  display: none;
-}
-`;
-  return Component;
-};
-var Placeholder_default = (() => Placeholder);
+// src/index.ts
+var CobaltSoulLogo_default = (() => CobaltSoulLogo);
+var index_default = CobaltSoulLogo_default;
 export {
-  CobaltSoulLogo_default as CobaltSoulLogo,
-  Placeholder_default as Placeholder
+  CobaltSoulLogo,
+  index_default as default
 };
 //# sourceMappingURL=index.js.map

@@ -67,11 +67,6 @@
         "displayName": "Cobalt Soul Logo",
         "defaultPosition": "left",
         "defaultPriority": 1
-      },
-      "Placeholder": {
-        "displayName": "Static Placeholder",
-        "defaultPosition": "left",
-        "defaultPriority": 2
       }
     }
   },
