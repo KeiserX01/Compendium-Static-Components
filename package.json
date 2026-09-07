@@ -23,8 +23,8 @@
       "import": "./dist/index.js"
     },
     "./components": {
-      "types": "./dist/components/index.d.ts",
-      "import": "./dist/components/index.js"
+      "types": "./dist/components.d.ts",
+      "import": "./dist/components.js"
     },
     "./package.json": "./package.json"
   },
