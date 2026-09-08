@@ -13,6 +13,8 @@ import type { QuartzComponent, QuartzComponentConstructor } from "@quartz-commun
  * El barrel (src/index.ts) lo envuelve como default para evitar
  * la duplicación _default / _default$1 en el bundle.
  */
+const DEFAULT_LOGO_SRC = "static/cobalt-soul-seal.svg"
+
 export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
   const Component: QuartzComponent = () => {
     return (
@@ -22,7 +24,7 @@ export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
         aria-label="Cobalt Soul seal"
       >
         <img
-          src="/static/cobalt-soul-seal.svg"
+          src={DEFAULT_LOGO_SRC}
           alt="Cobalt Soul seal"
           class="csc-logo__img"
           width="220"

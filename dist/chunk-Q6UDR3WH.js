@@ -1,6 +1,7 @@
 // src/components/CobaltSoulLogo.tsx
 import { classNames } from "@quartz-community/utils";
 import { jsx } from "preact/jsx-runtime";
+var DEFAULT_LOGO_SRC = "static/cobalt-soul-seal.svg";
 var CobaltSoulLogo = () => {
   const Component = () => {
     return /* @__PURE__ */ jsx(
@@ -12,7 +13,7 @@ var CobaltSoulLogo = () => {
         children: /* @__PURE__ */ jsx(
           "img",
           {
-            src: "/static/cobalt-soul-seal.svg",
+            src: DEFAULT_LOGO_SRC,
             alt: "Cobalt Soul seal",
             class: "csc-logo__img",
             width: "220",
@@ -67,4 +68,4 @@ var CobaltSoulLogo = () => {
 export {
   CobaltSoulLogo
 };
-//# sourceMappingURL=chunk-LEPBKUTJ.js.map
+//# sourceMappingURL=chunk-Q6UDR3WH.js.map

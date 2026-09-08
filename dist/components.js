@@ -1,6 +1,6 @@
 import {
   CobaltSoulLogo
-} from "./chunk-LEPBKUTJ.js";
+} from "./chunk-Q6UDR3WH.js";
 
 // src/components/index.ts
 var CobaltSoulLogo_default = (() => CobaltSoulLogo);

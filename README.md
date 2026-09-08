@@ -1,6 +1,6 @@
 # Compendium-StaticComponents
 
-Plugin de Quartz 5 para la wiki **Compendium**. Renderiza el logo del Alma de Cobalto (D&D) en la sidebar, arriba del título de página.
+Plugin de Quartz 5 para la wiki **Compendium**. Renderiza el logo del Alma de Cobalto (D&D) en la sidebar, arriba del título de página
 
 ## Componente incluido
 

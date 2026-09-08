@@ -1,4 +1,4 @@
-export { C as CobaltSoulLogo } from './CobaltSoulLogo-CDloElkU.js';
+export { C as CobaltSoulLogo } from './CobaltSoulLogo-KPvMq453.js';
 import { QuartzComponentConstructor } from '@quartz-community/types';
 
 /**
