@@ -40,7 +40,11 @@ export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 0.2rem 0.5rem 0.25rem;
+  height: 10%;
+  padding-block-end: 3.9rem;
+  /* padding: 0.2rem 0.5rem 0.25rem; */
+  flex-wrap: nowrap;
+  /* gap: 0.5rem; */
   pointer-events: none;
 }
 
@@ -60,7 +64,7 @@ export const CobaltSoulLogo: QuartzComponentConstructor<undefined> = () => {
 
 @media (max-width: 800px) {
   .csc-logo {
-    padding: 0.2rem 0.25rem 0.125rem;
+    /* padding: 0.2rem 0.25rem 0.125rem; */
   }
   .csc-logo__img {
     max-width: 140px;
